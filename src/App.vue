@@ -1,14 +1,31 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <NavBar />
     </div>
-    <router-view/>
+    <section id="main">
+      <div class="container">
+        <router-view/>
+      </div>
+    </section>
   </div>
 </template>
 
+<script>
+import NavBar from './components/NavBar'
+
+export default {
+  components: {
+    NavBar
+  }
+}
+</script>
+
 <style lang="scss">
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+@import "~bulma/sass/utilities/_all";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
