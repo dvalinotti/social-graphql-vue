@@ -25,6 +25,7 @@ export default {
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 @import "~bulma/sass/utilities/_all";
+@import "~material-icons/iconfont/material-icons.scss";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -34,8 +35,15 @@ export default {
   color: #2c3e50;
 }
 
+#main {
+  padding-top: 90px;
+}
+
 #nav {
   padding: 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 
   a {
     font-weight: bold;
