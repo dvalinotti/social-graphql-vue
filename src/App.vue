@@ -1,31 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <NavBar />
-    </div>
-    <section id="main">
+    <section
+      id="main"
+      :style="{'background-image': 'url(' + require('./windows/background.jpg') + ')'}"
+    >
       <div class="container">
-        <router-view/>
+        <router-view />
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar'
+// import NavBar from './components/NavBar';
 
-export default {
-  components: {
-    NavBar
-  }
-}
+// export default {
+//   components: {
+//     NavBar,
+//   },
+// };
 </script>
 
 <style lang="scss">
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 @import "~bulma/sass/utilities/_all";
-@import "~material-icons/iconfont/material-icons.scss";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -36,14 +35,13 @@ export default {
 }
 
 #main {
-  padding-top: 90px;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
 }
 
 #nav {
   padding: 30px;
-  position: fixed;
-  width: 100%;
-  z-index: 99;
 
   a {
     font-weight: bold;

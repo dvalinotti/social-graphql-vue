@@ -1,9 +1,16 @@
 <template>
-  <div class="box, post">
-    <div class="author-container">
-      <p>{{ author }}</p>
+  <div class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">
+        {{ author }}
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" />
+        <button aria-label="Maximize" />
+        <button aria-label="Close" />
+      </div>
     </div>
-    <div class="content-container">
+    <div class="window-body">
       <h6>{{ title }}</h6>
       <p>{{ body }}</p>
     </div>
@@ -13,38 +20,39 @@
 <script>
 export default {
   props: {
-    author: String,
-    title: String,
-    body: String
-  }
-}
+    author: {
+      type: String,
+      default: '',
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+    body: {
+      type: String,
+      default: '',
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-  .post {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 100%;
-    width: 100%;
-    height: 100%;
-    min-height: 120px;
-
-    .author-container {
-      text-align: left;
-      padding: 1em;
-    }
-
-    .content-container {
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-
-      h6 {
-        font-weight: 700;
-        margin-bottom: 1em;
-      }
-    }
+.title-bar {
+  .title-bar-text {
+    font-size: 1.125em;
   }
+}
+.window-body {
+  padding: 1em;
+  h6 {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1em;
+  }
+  p {
+    text-align: left;
+    font-size: 1.125em;
+  }
+}
 </style>

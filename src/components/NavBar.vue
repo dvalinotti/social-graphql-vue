@@ -1,7 +1,10 @@
 <template>
   <b-navbar>
     <template slot="brand">
-      <b-navbar-item tag="router-link" :to="{ path: '/' }">
+      <b-navbar-item
+        tag="router-link"
+        :to="{ path: '/' }"
+      >
         <span>
           Social GraphQL
         </span>
